@@ -1,0 +1,41 @@
+﻿@model List<Contacto>
+
+<h2>Lista de Contactos con Teléfonos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfonos</th>
+            <th>Acciones</th>
+            <th>
+                <a asp-action="Create">Crear Nuevo Contacto</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contacto in Model)
+        {
+            <tr>
+                <td>@contacto.Nombre</td>
+                <td>@contacto.Apellido</td>
+                <td>
+                    @foreach (var telefono in contacto.Telefonos)
+                    {
+                        <div>
+                            @telefono.TipoTelefono: @telefono.NumeroTelefono
+                        </div>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@contacto.Id">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@contacto.Id">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@contacto.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

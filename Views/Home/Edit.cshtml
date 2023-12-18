@@ -1,0 +1,42 @@
+﻿@model DirectorioMVC.Models.ContactoTelefono
+
+<h2>Edit Contacto</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Contacto.Id" />
+
+    <div class="form-group">
+        <label asp-for="Contacto.Nombre" class="control-label"></label>
+        <input asp-for="Contacto.Nombre" class="form-control" />
+        <span asp-validation-for="Contacto.Nombre" class="text-danger"></span>
+    </div>
+
+    <!-- Agrega más campos según sea necesario para tu modelo Contacto -->
+
+    <div class="form-group">
+        <label asp-for="Contacto.Apellido" class="control-label"></label>
+        <input asp-for="Contacto.Apellido" class="form-control" />
+        <span asp-validation-for="Contacto.Apellido" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Telefono.NumeroTelefono" class="control-label"></label>
+        <input asp-for="Telefono.NumeroTelefono" class="form-control" />
+        <span asp-validation-for="Telefono.NumeroTelefono" class="text-danger"></span>
+    </div>
+
+    <!-- Agrega más campos según sea necesario para tu modelo Telefono -->
+
+    <div class="form-group">
+        <label asp-for="Telefono.TipoTelefono" class="control-label"></label>
+        <input asp-for="Telefono.TipoTelefono" class="form-control" />
+        <span asp-validation-for="Telefono.TipoTelefono" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Actualizar" class="btn btn-primary" />
+    </div>
+    <p>
+        <a asp-action="Index">Volver a la lista</a>
+    </p>
+</form>

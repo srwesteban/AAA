@@ -1,0 +1,28 @@
+﻿@model Contacto
+
+<h2>Eliminar Contacto</h2>
+
+<h3>¿Estás seguro de que quieres eliminar este contacto?</h3>
+<div>
+    <h4>Contacto</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+    </dl>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button> |
+        <a asp-action="Index">Volver a la lista</a>
+    </form>
+</div>
